@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #0d0b1a;
+    --bg-secondary: #17132e;
+    --bg-tertiary: #221c44;
+    --text-primary: #f5f3ff;
+    --text-secondary: #c4b5fd;
+    --accent-purple: #9d4edd;
+    --accent-borahae: #7b2cbf;
+    --accent-pink: #f472b6;
+    --accent-lavender: #d8b4fe;
+    --paper-plain: #ffffff;
+    --paper-cream: #fbf9f4;
+    --paper-lavender: #f7f3ff;
+    --paper-midnight: #191433;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Notebook paper patterns */
+.paper-lined {
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    rgba(167, 139, 250, 0.22) 31px,
+    rgba(167, 139, 250, 0.22) 32px
+  );
+  line-height: 32px;
+}
+
+.paper-lined-dark {
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    rgba(196, 181, 253, 0.15) 31px,
+    rgba(196, 181, 253, 0.15) 32px
+  );
+  line-height: 32px;
+}
+
+.paper-dotted {
+  background-image: radial-gradient(rgba(147, 51, 234, 0.25) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.paper-dotted-dark {
+  background-image: radial-gradient(rgba(216, 180, 254, 0.25) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.paper-grid {
+  background-image: 
+    linear-gradient(to right, rgba(147, 51, 234, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(147, 51, 234, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.paper-grid-dark {
+  background-image: 
+    linear-gradient(to right, rgba(196, 181, 253, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(196, 181, 253, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Twinkling star animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.4)); }
+  50% { filter: drop-shadow(0 0 24px rgba(236, 72, 153, 0.7)); }
+}
+
+.animate-twinkle-1 {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.animate-twinkle-2 {
+  animation: twinkle 4.5s ease-in-out infinite 1s;
+}
+
+.animate-twinkle-3 {
+  animation: twinkle 6s ease-in-out infinite 2s;
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 12, 33, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(147, 51, 234, 0.4);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.7);
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-page {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+}

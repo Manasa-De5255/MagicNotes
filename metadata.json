@@ -1,0 +1,6 @@
+{
+  "name": "Magic Notes – BTS Universe Research Notebook",
+  "description": "A dreamy BTS-inspired personal digital research notebook with cloud database sync, interactive stickers, rich notes, research organizer, and galaxy study tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
